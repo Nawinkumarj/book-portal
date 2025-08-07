@@ -6,7 +6,7 @@ export const DocsProvider = ({ children }) => {
   const [docs, setDocs] = useState([
     {
       id: 1,
-      name: "Resume.doc",
+      name: "Resume.docx",
       submittedAt: "2025-07-11T08:00:00Z",
       uploadedBy: "John Doe",
       fileUrl: "/documents/resume.docx",

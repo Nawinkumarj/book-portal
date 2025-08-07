@@ -1,29 +1,89 @@
 import { Editor } from "@tinymce/tinymce-react";
-import { useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-// import "./index.css"
+import { useRef, useEffect, useState } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useDocs } from "../Components/DocsContext";
+import mammoth from "mammoth";
+import { Document, Packer, Paragraph } from "docx";
+import { saveAs } from "file-saver";
 
 const LanguageEditor = () => {
   const editorRef = useRef(null);
   const { docId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { docs } = useDocs();
 
+  const docFromState = location.state?.doc;
+  const doc = docFromState || docs.find((d) => d.id === parseInt(docId));
 
-  const handleSave = () => {
+  const [htmlContent, setHtmlContent] = useState("<p>Loading document...</p>");
+
+  useEffect(() => {
+    const fetchAndConvertDocx = async () => {
+      if (!doc) return;
+
+      try {
+        const response = await fetch(doc.fileUrl);
+        const blob = await response.blob();
+        const arrayBuffer = await blob.arrayBuffer();
+
+        const result = await mammoth.convertToHtml({ arrayBuffer });
+        setHtmlContent(result.value || "<p>(Empty document)</p>");
+
+        // Set content in the editor
+        if (editorRef.current) {
+          editorRef.current.setContent(result.value || "<p>(Empty document)</p>");
+        }
+      } catch (err) {
+        console.error("Error loading DOCX file:", err);
+        setHtmlContent("<p>Error loading document.</p>");
+        if (editorRef.current) {
+          editorRef.current.setContent("<p>Error loading document.</p>");
+        }
+      }
+    };
+
+    fetchAndConvertDocx();
+  }, [doc]);
+
+  const handleSave = async () => {
     const content = editorRef.current?.getContent();
-    console.log("Edited content:", content);
-    alert("Document saved!");
+    if (!content) return;
+
+    // Convert HTML to plain text for now (docx doesn't support raw HTML)
+    const tempElement = document.createElement("div");
+    tempElement.innerHTML = content;
+    const text = tempElement.innerText;
+
+    const docxDocument = new Document({
+      sections: [
+        {
+          children: text
+            .split("\n")
+            .map((line) => new Paragraph(line.trim())),
+        },
+      ],
+    });
+
+    const blob = await Packer.toBlob(docxDocument);
+    const fileName = doc.name.replace(/\.[^/.]+$/, "") + "_edited.docx";
+
+    saveAs(blob, fileName);
+
+    alert("Document saved and downloaded!");
     navigate(`/cover-design/${docId}`);
   };
+
+  if (!doc) return <div>Document not found</div>;
 
   return (
     <div className="language-editor-container">
       <h2>📝 Language Editing Panel</h2>
 
       <Editor
-        apiKey="521rnm1jzvxt4fqry2azv2r8sfyh6asmlnyo3nm19fdi9dh3" // Optional: Get a free API key from tiny.cloud
+        apiKey="521rnm1jzvxt4fqry2azv2r8sfyh6asmlnyo3nm19fdi9dh3"
         onInit={(evt, editor) => (editorRef.current = editor)}
-        initialValue="<p>Start editing your document here...</p>"
+        initialValue="<p>Loading...</p>"
         init={{
           height: 600,
           menubar: true,
@@ -45,3 +105,4 @@ const LanguageEditor = () => {
 };
 
 export default LanguageEditor;
+        

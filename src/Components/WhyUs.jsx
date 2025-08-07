@@ -5,23 +5,23 @@ import { FaRocket, FaShieldAlt, FaHeadset, FaSmile } from "react-icons/fa";
 const features = [
     {
         icon: <FaRocket />,
-        title: "Fast & Reliable",
-        description: "Experience lightning-fast services with 99.9% uptime and real-time support."
+        title: "Author & Manuscript Protection",    
+        description: "Through adoption of Blockchain technology, decentralized ID is created to avoid duplication and protect copyright infringement."
     },
-    {
+    {   
         icon: <FaShieldAlt />,
-        title: "Secure & Trusted",
-        description: "Your data is protected with end-to-end encryption and secure transactions."
+        title: "Student-Friendly Publishing Packages",
+        description: "20% discount offered exclusively for university students without any VAT, including Basic, Pro, Elite and ad-hoc selective publishing service(s). "
     },
     {
         icon: <FaHeadset />,
-        title: "24/7 Support",
-        description: "Our support team is always ready to help you anytime, anywhere."
+        title: "AI-powered Design tools",
+        description: "AI-driven templates and design options to create stunning book covers and instant illustrations or graphics."
     },
     {
         icon: <FaSmile />,
-        title: "Customer Satisfaction",
-        description: "We value our customers and go the extra mile to ensure their happiness."
+        title: "Marketing and Audience Targeting",
+        description: "Predictive Data Analytics and Machine Learning Technology provides tools and insights that allow authors to promote their work efficiently, even without a dedicated marketing team."
     }
 ];
 

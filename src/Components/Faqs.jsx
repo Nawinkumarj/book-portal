@@ -3,21 +3,37 @@ import React, { useState } from "react";
 
 const faqData = [
   {
-    question: "What is your return policy?",
-    answer: "We accept returns within 30 days of purchase. Items must be unused and in original packaging."
+    question: "What is SL 4.0?",
+    answer: "Silent Launch 4.0 is a cloud-based, AI-powered academic publishing platform developed with R-Logics Solutions, UK, integrating automation, blockchain, and cybersecurity to streamline and secure publishing workflows."
   },
   {
-    question: "Do you offer international shipping?",
-    answer: "Yes, we ship to most countries worldwide. Shipping charges apply based on location."
+    question: "Who is SL 4.0 designed for?",
+    answer: "It's tailored for students, researchers, and independent authors seeking cost-effective, credible publishing solutions aligned with academic standards. "
   },
   {
-    question: "How can I track my order?",
-    answer: "After placing your order, you will receive a tracking link via email."
+    question: "How does SL 4.0 automate the publishing process?",
+    answer: "The platform employs AI tools for grammar correction, citation validation, academic tone refinement, metadata tagging, and automated formatting, enhancing efficiency and consistency."
   },
   {
-    question: "What payment methods are accepted?",
-    answer: "We accept Visa, MasterCard, PayPal, and UPI."
-  }
+    question: "Is SL 4.0 secure and GDPR compliant?",
+    answer: "Yes, developed with cybersecurity best practices and blockchain technology, it ensures robust data protection, GDPR compliance, and transparent IP management."
+  },
+    {
+    question: "How does blockchain technology benefit authors?",
+    answer: "Blockchain technology ensures timestamped authorship verification, transparent licensing, IP protection, and secure collaborative version control. "
+    },
+      {
+    question: "What publishing models does SL 4.0 offer?",
+    answer: "It offers Basic-to-Elite publishing packages, with 20% discount for students with additional features at each level, including optional human editorial support."
+      },
+        {
+    question: "Can SL 4.0 integrate with institutional systems?",
+    answer: "Yes, the cloud-based architecture enables easy integration with academic repositories, institutional platforms, and supports institutional branding and real-time collaboration."
+        },
+              {
+    question: " When will SL 4.0 be available?",
+    answer: "Beta testing is scheduled for Autumn 2025, following a 3-month development cycle of benchmarking, system architecture, technology integration, and refinement."
+  },
 ];
 
 const Faqs = () => {
