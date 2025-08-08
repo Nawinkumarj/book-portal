@@ -4,7 +4,7 @@ import React, { useState } from "react";
 const faqData = [
   {
     question: "What is SL 4.0?",
-    answer: "Silent Launch 4.0 is a cloud-based, AI-powered academic publishing platform developed with R-Logics Solutions, UK, integrating automation, blockchain, and cybersecurity to streamline and secure publishing workflows."
+    answer: "Silent Launch 4.0 is a cloud-based, AI-powered academic publishing platform developed with Vcraftyu Company & R-Logics Solutions, UK, integrating automation, blockchain, and cybersecurity to streamline and secure publishing workflows."
   },
   {
     question: "Who is SL 4.0 designed for?",
