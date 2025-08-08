@@ -3,7 +3,7 @@ import React from 'react'
 export default function About() {
   return (
     <div className='home-about-container'>
-      <div className="about-section">
+      <div className="about-section home-abt-sec">
         <div className="home-about">
             <img src="/src/assets/about-us.jpg" alt="" />
         </div>

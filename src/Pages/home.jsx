@@ -33,6 +33,7 @@ import React from "react";
 import Orb from "../Components/orb";
 import WhyChooseUs from "../Components/WhyUs";
 import About from "../Components/About";
+import Testimonials from "../Components/Testimonials";
 
 const Home = () => {
   return (
@@ -50,6 +51,7 @@ const Home = () => {
       </div>
       <About />
       <WhyChooseUs />
+      <Testimonials />
     </div>
   );
 };
