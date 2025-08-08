@@ -36,8 +36,10 @@ export default function Testimonials() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 1500,
     responsive: [
       {
         breakpoint: 768,
@@ -49,15 +51,17 @@ export default function Testimonials() {
   };
 
   return (
-    <div className="testimonial-section">
-      <h2 className="testimonial-title">What Our Clients Say</h2>
+    <div className="testimonial-wrapper">
+      <h2 className="testimonial-title">Testimonials</h2>
       <Slider {...settings}>
-        {testimonials.map((t, index) => (
-          <div className="testimonial-card" key={index}>
-            <img src={t.img} alt={t.name} className="testimonial-img" />
-            <p className="testimonial-text">"{t.text}"</p>
-            <h4 className="testimonial-name">{t.name}</h4>
-            <span className="testimonial-role">{t.role}</span>
+        {testimonials.map((t, i) => (
+          <div key={i} className="testimonial-slide">
+            <div className="testimonial-card">
+              <img src={t.img} alt={t.name} className="testimonial-img" />
+              <p className="testimonial-text">"{t.text}"</p>
+              <h4 className="testimonial-name">{t.name}</h4>
+              <small className="testimonial-role">{t.role}</small>
+            </div>
           </div>
         ))}
       </Slider>

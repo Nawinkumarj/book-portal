@@ -30,51 +30,92 @@ h1 {
 a {
   text-decoration: none;
 }
-
+/*  */
 .navbar {
-  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 12px 20px;
+  color: white;
+  position: relative;
+  z-index: 1000;
+  width: 80%;
+  margin: 0 auto;
   margin-top: 40px;
   font-family: var(--primary-font);
   font-weight: 400;
 }
-
 .navbar-list {
   display: flex;
-  align-items: center;
   gap: 3rem;
+  align-items: center;
 }
-
-.navbar a {
+.navbar-list a {
   text-decoration: none;
   font-size: 1.3rem;
   color: var(--text-clr);
   font-weight: 500;
   text-transform: uppercase;
 }
-
-.navbar .navbar-sign-in a {
-  color: white;
-  background: #25c6db;
-  background: linear-gradient(156deg, rgba(37, 198, 219, 1) 0%, rgba(111, 194, 66, 1) 100%);
+.navbar-list a.active {
+  color: #25C6DB;
+  background: linear-gradient(70deg, #25C6DB 5%, #1FE056 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.navbar-sign-in .signin-btn {
+  background: #fff;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.signin-btn {
-  background-color: #0b0b0b;
-  padding: 10px 15px;
-  border-radius: 10px;
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+}
+.hamburger div {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
 }
 
-.signin-container {
-  background-color: red;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar-list {
+    position: fixed;
+    top: 56px; /* height of navbar */
+    right: 0;
+    background: #333;
+    height: calc(100vh - 56px);
+    width: 200px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  .navbar-list.open {
+    transform: translateX(0);
+  }
 
+  .navbar-sign-in {
+    display: none; /* Hide sign in button in navbar for mobile */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+/*  */
 .sign-in {
   display: flex;
   align-items: center;
@@ -1495,16 +1536,22 @@ a {
 
 /* Testimonials */
 .testimonial-wrapper {
-  max-width: 900px;
+  width: 50%;
   margin: 40px auto;
   padding: 0 20px;
 }
 
 .testimonial-title {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #25C6DB;
+  background: linear-gradient(70deg, #25C6DB 5%, #1FE056 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-family: var(--secondary-font);
 }
 
 .testimonial-slide {
