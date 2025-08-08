@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                © {new Date().getFullYear()} SL4.0. Powered by <a href="https://vcraftyucompany.com/"> Vcraftyu Company</a> 
+                © {new Date().getFullYear()} SL4.0. Powered by <a href="https://vcraftyucompany.com/" target="_blank"> Vcraftyu Company</a> 
             </div>
         </footer>
     );
