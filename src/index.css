@@ -30,6 +30,7 @@ h1 {
 a {
   text-decoration: none;
 }
+
 /*  */
 .navbar {
   display: flex;
@@ -45,11 +46,13 @@ a {
   font-family: var(--primary-font);
   font-weight: 400;
 }
+
 .navbar-list {
   display: flex;
   gap: 3rem;
   align-items: center;
 }
+
 .navbar-list a {
   text-decoration: none;
   font-size: 1.3rem;
@@ -57,6 +60,7 @@ a {
   font-weight: 500;
   text-transform: uppercase;
 }
+
 .navbar-list a.active {
   color: #25C6DB;
   background: linear-gradient(70deg, #25C6DB 5%, #1FE056 50%);
@@ -64,6 +68,7 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 .navbar-sign-in .signin-btn {
   background: #fff;
   color: #333;
@@ -81,9 +86,10 @@ a {
   gap: 5px;
   width: 25px;
 }
+
 .hamburger div {
   height: 3px;
-  background: white;
+  background: rgb(203, 28, 28);
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -92,30 +98,32 @@ a {
 @media (max-width: 768px) {
   .navbar-list {
     position: fixed;
-    top: 56px; /* height of navbar */
-    right: 0;
-    background: #333;
-    height: calc(100vh - 56px);
-    width: 200px;
+    top: 50px;
+    width: 350px;
+    height: 300px !important;
+    right: 0px;
+    border-radius: 10px;
+    background: #333333;
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     gap: 15px;
-    transform: translateX(100%);
+    transform: translateY(-150%);
     transition: transform 0.3s ease-in-out;
   }
-  .navbar-list.open {
-    transform: translateX(0);
-  }
 
-  .navbar-sign-in {
-    display: none; /* Hide sign in button in navbar for mobile */
+  .navbar-list.open {
+    transform: translate(-20px, 0px);
   }
 
   .hamburger {
     display: flex;
+    right: 0;
   }
 }
-/*  */
+
 .sign-in {
   display: flex;
   align-items: center;
@@ -165,6 +173,22 @@ a {
   color: var(--text-clr);
   text-align: center;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    top: 45%;
+    font-size: 1.3rem;
+  }
+
+  .welccome-text {
+    font-size: 0.9rem;
+  }
+
+  .request-demo {
+    top: 65% !important;
+    font-size: 0.8rem !important;
+  }
 }
 
 .request-demo {
@@ -1245,10 +1269,11 @@ a {
 
 
 /* About */
-.home-abt-sec{
+.home-abt-sec {
   display: flex;
   flex-wrap: wrap;
 }
+
 .home-about {
   width: 600px;
 }
@@ -1555,13 +1580,15 @@ a {
 }
 
 .testimonial-slide {
-  padding: 0 10px; /* spacing between slides */
+  padding: 0 10px;
+  /* spacing between slides */
   box-sizing: border-box;
 }
 
 /* Slick sets this on each slide, override the width */
 .testimonial-slide.slick-slide {
-  width: 50% !important; /* show 2 slides by default */
+  width: 50% !important;
+  /* show 2 slides by default */
 }
 
 /* Small screens: force slides to full width (1 slide) */
