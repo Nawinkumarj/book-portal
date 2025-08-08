@@ -34,6 +34,7 @@ import Orb from "../Components/orb";
 import WhyChooseUs from "../Components/WhyUs";
 import About from "../Components/About";
 import Testimonials from "../Components/Testimonials";
+import Guidebook from "../Components/Guidebook";
 
 const Home = () => {
   return (
@@ -52,6 +53,7 @@ const Home = () => {
       <About />
       <WhyChooseUs />
       <Testimonials />
+      <Guidebook />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import {
     FaInstagram,
     FaLinkedinIn,
 } from "react-icons/fa";
+import footerlogo from '../assets/Sl40.png'
 
 
 const Footer = () => {
@@ -13,7 +14,7 @@ const Footer = () => {
             <div className="footer-container">
                 {/* Brand Info */}
                 <div className="footer-brand">
-                    <h2>📖 Silent Launch 4.0</h2>
+                    <img src={footerlogo} className="footer-logo" alt="" />
                     <p>
                         Dive into a world of knowledge, stories, and imagination. Your
                         gateway to books, authors, and communities that matter.

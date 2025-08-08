@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-
+import navlogo from '../assets/Sl40.png'
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,6 +8,9 @@ const Navbar = () => {
   const toggleMenu = () => setMobileMenuOpen((prev) => !prev);
   return (
     <nav className="navbar">
+      <div className="navbar-logo">
+        <img src={navlogo} alt="" />
+      </div>
         <div
           className={`navbar-list ${mobileMenuOpen ? "open" : ""}`}
           onClick={() => setMobileMenuOpen(false)} // close menu on link click
