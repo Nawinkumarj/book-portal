@@ -1759,8 +1759,15 @@ a {
 .footer-bottom {
   text-align: center;
   color: #888;
-  font-size: 13px;
+  font-size: 15px;
   margin-top: 30px;
   border-top: 1px solid #333;
   padding-top: 20px;
+}
+.footer-bottom a{
+  text-decoration: none;
+  color: var(--sec-clr);
+}
+.footer-bottom a:hover{
+  color: #c2a25f;
 }
